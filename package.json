@@ -8,8 +8,12 @@
   "private": false,
   "scripts": {
     "start": "concurrently \"yarn dev:front\" \"yarn dev:back\"",
+    "build": "concurrently \"yarn build:front\" \"yarn build:back\"",
+    "install-deps": "concurrently \"yarn --cwd front-end install\" \"yarn --cwd back-end install\"",
     "dev:front": "yarn --cwd front-end dev",
-    "dev:back": "yarn --cwd back-end start:dev"
+    "dev:back": "yarn --cwd back-end start:dev",
+    "build:back": "yarn --cwd back-end build",
+    "build:front": "yarn --cwd front-end build"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

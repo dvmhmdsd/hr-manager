@@ -1,0 +1,78 @@
+type LocalizedName {
+  firstName: String!
+  fatherName: String!
+  grandfatherName: String!
+  familyName: String!
+}
+
+type NationalId {
+  idNumber: String!
+  expiryDate: String!
+}
+
+type Country {
+  id: Int!
+  name: String!
+}
+
+type Nationality {
+  country: Country!
+  countryId: Int!
+}
+
+type MaritalStatus {
+  id: Int!
+  name: String!
+}
+
+type User {
+  firstName: String!
+  fatherName: String!
+  grandfatherName: String!
+  familyName: String!
+  localizedName: LocalizedName
+  nationalId: NationalId
+  nationalities: [Nationality!]
+  maritalStatus: MaritalStatus
+  dependants: Int!
+}
+
+type Query {
+  user(id: Int!): User
+}
+
+input LocalizedNameInput {
+  firstName: String!
+  fatherName: String!
+  grandfatherName: String!
+  familyName: String!
+}
+
+input NationalIdInput {
+  idNumber: String!
+  expiryDate: String!
+}
+
+input NationalityInput {
+  countryId: Int!
+}
+
+input MaritalStatusInput {
+  id: Int!
+}
+
+input UpdateUserInput {
+  firstName: String!
+  fatherName: String!
+  grandfatherName: String!
+  familyName: String!
+  localizedName: LocalizedNameInput
+  nationalId: NationalIdInput
+  nationalities: [NationalityInput!]
+  maritalStatus: MaritalStatusInput
+  dependants: Int!
+}
+
+type Mutation {
+  updateUser(id: Int!, input: UpdateUserInput!): User
+}

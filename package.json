@@ -6,6 +6,10 @@
   "author": "Mohamed Saad",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "start": "concurrently \"yarn dev:front\" \"yarn dev:back\"",
+    "dev:front": "yarn --prefix front-end dev"
+  },
   "devDependencies": {
     "concurrently": "^8.2.2"
   }

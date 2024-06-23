@@ -8,7 +8,8 @@
   "private": false,
   "scripts": {
     "start": "concurrently \"yarn dev:front\" \"yarn dev:back\"",
-    "dev:front": "yarn --prefix front-end dev"
+    "dev:front": "yarn --cwd front-end dev",
+    "dev:back": "yarn --cwd back-end start:dev"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

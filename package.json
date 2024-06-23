@@ -1,0 +1,12 @@
+{
+  "name": "hr-manager",
+  "version": "1.0.0",
+  "description": "An interview task to build a fullstack app that manages hr users",
+  "main": "index.js",
+  "author": "Mohamed Saad",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

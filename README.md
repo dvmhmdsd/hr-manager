@@ -15,10 +15,10 @@ yarn install-deps
 2. **Run the project**:
 
 ```sh
-yarn start
+yarn dev
 ```
 
-2. **Build the project**:
+3. **Build the project**:
 
 ```sh
 yarn build

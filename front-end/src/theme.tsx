@@ -1,0 +1,115 @@
+import { createTheme } from "@mui/material";
+
+export const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#0F6CBD", // btns color
+    },
+    secondary: {
+      main: "#051D49", // color of sidebar items
+      light: "#003FAD", // color of active breadcrumb text
+    },
+    text: {
+      primary: "#151D48", // main text color
+    },
+    background: {
+      default: "#FAFAFA",
+      paper: "#fff",
+    },
+    grey: {
+      "600": "#737791",
+      "400": "#959FB0",
+    },
+  },
+  typography: {
+    h1: {
+      fontSize: "26px",
+      fontWeight: "600",
+      lineHeight: "39px",
+      letterSpacing: "0.5px",
+      color: "#151D48",
+    },
+    h2: {
+      fontSize: "20px",
+      fontWeight: "600",
+      lineHeight: "30px",
+      color: "#051D49",
+    },
+    h3: {
+      fontSize: "20px",
+      fontWeight: "500",
+      lineHeight: "30px",
+      color: "#151D48",
+    },
+    subtitle1: {
+      fontSize: "16px",
+      fontWeight: "400",
+      color: "#737791",
+    },
+    subtitle2: {
+      fontSize: "18px",
+      fontWeight: "400px",
+      lineHeight: "27px",
+      color: "#051D49",
+    },
+    body1: {
+      fontSize: "16px",
+      fontWeight: "500",
+      lineHeight: "24px",
+    },
+    body2: {
+      fontSize: "12px",
+      fontWeight: "400",
+      lineHeight: "20px",
+    },
+    button: {
+      fontSize: "14px",
+      fontWeight: "600",
+      lineHeight: "20px",
+    },
+  },
+  components: {
+    MuiCard: {
+      styleOverrides: {
+        root: ({ ownerState: { datatype }, theme }) => ({
+          p: datatype === "side" ? theme.spacing(3) : theme.spacing(5),
+          borderRadius: datatype === "side" ? theme.spacing(3) : "20px",
+        }),
+      },
+    },
+  },
+  spacing: 8,
+  status: {
+    active: {
+      color: "#0F6CBD",
+      backgroundColor: "#F4F8FE",
+    },
+  },
+});
+
+declare module "@mui/material/styles" {
+  interface Theme {
+    status: {
+      active: {
+        color: string;
+        backgroundColor: string;
+      };
+    };
+  }
+  // allow configuration using `createTheme`
+  interface ThemeOptions {
+    status?: {
+      active?: {
+        color?: string;
+        backgroundColor?: string;
+      };
+    };
+  }
+}
+
+declare module "@mui/material/Card" {
+  interface ButtonPropsVariantOverrides {
+    side: true;
+    main: true;
+  }
+}

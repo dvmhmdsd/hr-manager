@@ -54,14 +54,6 @@ input NationalIdInput {
   expiryDate: String!
 }
 
-input NationalityInput {
-  countryId: Int!
-}
-
-input MaritalStatusInput {
-  id: Int!
-}
-
 input UpdateUserInput {
   firstName: String!
   fatherName: String!
@@ -69,8 +61,8 @@ input UpdateUserInput {
   familyName: String!
   localizedName: LocalizedNameInput
   nationalId: NationalIdInput
-  nationalities: [NationalityInput!]
-  maritalStatus: MaritalStatusInput
+  nationalities: [Int!]
+  maritalStatus: Int!
   dependants: Int!
 }
 

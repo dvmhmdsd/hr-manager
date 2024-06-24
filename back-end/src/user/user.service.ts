@@ -24,6 +24,7 @@ export class UserService {
     const updatedUser = this.mapInputDataToUserType(userIndex, updateUserInput);
 
     this.userUtils.users[userIndex] = updatedUser;
+
     return this.userUtils.users[userIndex];
   }
 
@@ -35,13 +36,13 @@ export class UserService {
       ...this.userUtils.users[userIndex],
       ...updateUserInput,
       nationalities: updateUserInput.nationalities?.map((nationalityInput) => ({
-        country: this.userUtils.getCountryById(nationalityInput.countryId),
-        countryId: nationalityInput.countryId,
+        country: this.userUtils.getCountryById(nationalityInput),
+        countryId: nationalityInput,
       })),
       maritalStatus: {
-        id: updateUserInput.maritalStatus.id,
+        id: updateUserInput.maritalStatus,
         name: this.userUtils.getMaritalStatusById(
-          updateUserInput.maritalStatus.id,
+          updateUserInput.maritalStatus,
         ),
       },
     };

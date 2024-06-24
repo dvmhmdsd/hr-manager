@@ -5,12 +5,24 @@ export default function InfoCard({
   children,
   title,
   action,
-}: Readonly<{ children: ReactNode[]; title: string; action: () => void }>) {
+}: Readonly<{
+  children: ReactNode[] | ReactNode;
+  title: string;
+  action: () => void;
+}>) {
   return (
-    <Card datatype="main">
-      <Box>
+    <Card component="article" datatype="main">
+      <Box
+        component="header"
+        className="flex flex-row justify-between items-center mb-24"
+      >
         <Typography variant="h3"> {title} </Typography>
-        <Button color="primary" onClick={action}>
+        <Button
+          className="w-[calc(104px)] h-[calc(36px)]"
+          color="primary"
+          variant="contained"
+          onClick={action}
+        >
           Edit
         </Button>
       </Box>

@@ -72,10 +72,22 @@ export const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: ({ ownerState: { datatype }, theme }) => ({
-          p: datatype === "side" ? theme.spacing(3) : theme.spacing(5),
+          padding: datatype === "side" ? theme.spacing(3) : theme.spacing(5),
           borderRadius: datatype === "side" ? theme.spacing(3) : "20px",
         }),
       },
+    },
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: "contained" },
+          style: {
+            boxShadow: "unset",
+            padding: "8px 12px",
+            textTransform: 'capitalize'
+          },
+        },
+      ],
     },
   },
   spacing: 8,

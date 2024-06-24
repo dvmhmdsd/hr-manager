@@ -26,6 +26,7 @@ type MaritalStatus {
 }
 
 type User {
+  id: Int!
   firstName: String!
   fatherName: String!
   grandfatherName: String!

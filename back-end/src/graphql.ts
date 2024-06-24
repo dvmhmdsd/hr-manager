@@ -68,6 +68,7 @@ export class MaritalStatus {
 }
 
 export class User {
+    id: number;
     firstName: string;
     fatherName: string;
     grandfatherName: string;

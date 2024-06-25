@@ -1,13 +1,11 @@
-import "./App.css";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PersonalInfo from "./pages/PersonalInfo.page";
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <PersonalInfo />
-  }
+    path: "/",
+    element: <PersonalInfo />,
+  },
 ]);
 
 function App() {

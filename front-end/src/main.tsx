@@ -4,11 +4,39 @@ import App from "./App.tsx";
 import "./index.css";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./theme.tsx";
+import Layout from "./shared/Layout.tsx";
+
+const buildProvidersTree = (
+  componentsWithProps: [JSX.ElementType, object][]
+) => {
+  const initialComponent = ({ children }: { children: React.ReactNode }) => (
+    <>{children}</>
+  );
+
+  return componentsWithProps.reduce(
+    (
+      AccumulatedComponents: JSX.ElementType,
+      [Provider, props = {}]: [JSX.ElementType, object]
+    ) => {
+      return ({ children }: { children: React.ReactNode }) => (
+        <AccumulatedComponents>
+          <Provider {...props}>{children}</Provider>
+        </AccumulatedComponents>
+      );
+    },
+    initialComponent
+  );
+};
+
+// eslint-disable-next-line react-refresh/only-export-components
+const ProvidersTree = buildProvidersTree([
+  [React.StrictMode, {}],
+  [ThemeProvider, { theme }],
+  [Layout, {}],
+]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>
+  <ProvidersTree>
+    <App />
+  </ProvidersTree>
 );

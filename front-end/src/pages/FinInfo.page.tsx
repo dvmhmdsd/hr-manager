@@ -1,11 +1,9 @@
+import { useInfo } from "../hooks/useInfo";
 import InfoCard from "../shared/InfoCard";
 import { Box, Typography } from "@mui/material";
 
 export default function FinInfo() {
-  const bankInfo = [
-    { label: "bank Name", value: "CIB" },
-    { label: "IBAN", value: "12346546413216446" },
-  ];
+  const { bankInfo } = useInfo();
   return (
     <InfoCard
       title="Bank Information"

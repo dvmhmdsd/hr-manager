@@ -79,8 +79,8 @@ export const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: ({ ownerState: { datatype }, theme }) => ({
-          padding: datatype === "side" ? theme.spacing(3) : theme.spacing(5),
-          borderRadius: datatype === "side" ? theme.spacing(3) : "20px",
+          padding: datatype === "main" ? theme.spacing(5) : theme.spacing(3),
+          borderRadius: datatype === "main" ? "20px" : theme.spacing(3),
         }),
       },
     },

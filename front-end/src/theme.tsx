@@ -63,7 +63,7 @@ export const theme = createTheme({
       fontSize: "12px",
       fontWeight: "400",
       lineHeight: "20px",
-      marginBottom: "8px",
+      marginBottom: "4px",
       color: "#737791",
     },
     button: {
@@ -81,11 +81,9 @@ export const theme = createTheme({
   components: {
     MuiCard: {
       styleOverrides: {
-        root: ({ ownerState: { datatype }, theme }) => ({
-          padding: datatype === "side" ? theme.spacing(5) : theme.spacing(3),
-          borderRadius: datatype === "side" ? theme.spacing(3) : "20px",
+        root: {
           boxShadow: "0px 4px 20px 0px #EEEEEE80",
-        }),
+        },
       },
     },
     MuiButton: {

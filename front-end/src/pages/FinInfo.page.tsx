@@ -7,7 +7,11 @@ export default function FinInfo() {
     { label: "IBAN", value: "12346546413216446" },
   ];
   return (
-    <InfoCard title="Bank Information" action={() => {}} sx={{ mb: "24px" }}>
+    <InfoCard
+      title="Bank Information"
+      action={() => {}}
+      sx={{ mb: "24px", p: "40px", borderRadius: "20px" }}
+    >
       <Box className="grid gap-6 grid-cols-4">
         {bankInfo.map(({ label, value }) => (
           <Box key={label}>

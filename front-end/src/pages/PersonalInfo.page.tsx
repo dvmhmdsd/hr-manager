@@ -2,16 +2,21 @@ import { Box, Button, Typography } from "@mui/material";
 import InfoCard from "../shared/InfoCard";
 import { FileIcon } from "../shared/Icons";
 import { useInfo } from "../hooks/useInfo";
+import { useNavigate } from "react-router-dom";
 
 export default function PersonalInfo() {
   const { userInfo } = useInfo();
+  const navigate = useNavigate();
 
   return (
     <>
       {Object.entries(userInfo).map(([title, infoData]) => (
         <InfoCard
           title={title}
-          action={() => {}}
+          action={() => {
+            if (title !== "Basic Information") return;
+            navigate("/info/edit");
+          }}
           key={title}
           sx={{ mb: "24px", p: "40px", borderRadius: "20px" }}
         >

@@ -13,7 +13,7 @@ export default function InfoCard({
   sx?: SxProps;
 }>) {
   return (
-    <Card component="article" datatype="main" sx={sx}>
+    <Card component="article" sx={sx}>
       <Box
         component="header"
         className="flex flex-row justify-between items-center mb-6"

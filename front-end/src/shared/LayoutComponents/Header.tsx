@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <Box
       component="nav"
-      className="flex justify-between items-center py-6 px-10"
+      className="flex justify-between items-center py-6 px-10 ml-[calc(108px)]"
     >
       <Box component="section">
         <Typography className="mb-4" variant="h1">
@@ -102,7 +102,7 @@ const HeaderIcons = () => {
     },
     {
       key: 1,
-      component: <Box component="img" src={personImg} className="w-10 h-10" />,
+      component: <Box component="img" src={personImg} className="w-10 h-10 hover:cursor-pointer" />,
     },
   ];
   return (

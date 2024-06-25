@@ -7,3 +7,7 @@
   src: local("Poppins-Regular"),
     url("./assets/Poppins-Regular.ttf") format("truetype");
 }
+
+body {
+  background-color: #FAFAFA;
+}

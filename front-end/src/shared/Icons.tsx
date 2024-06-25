@@ -93,7 +93,7 @@ export const SettingsIcon = (props: SvgIconProps) => (
   </SvgIcon>
 );
 
-export const HomeIcon = (props: SvgIconProps) => (
+export const HomeIcon = (props: SvgIconProps & { customColor: string }) => (
   <SvgIcon {...props}>
     <svg
       width="24"
@@ -104,28 +104,28 @@ export const HomeIcon = (props: SvgIconProps) => (
     >
       <path
         d="M21.0002 14.0001H14.0002V21.0001H21.0002V14.0001Z"
-        stroke={props.color}
+        stroke={props.customColor}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M10.0002 14.0001H3.00018V21.0001H10.0002V14.0001Z"
-        stroke={props.color}
+        stroke={props.customColor}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M21.0002 3.00012H14.0002V10.0001H21.0002V3.00012Z"
-        stroke={props.color}
+        stroke={props.customColor}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M10.0002 3.00012H3.00018V10.0001H10.0002V3.00012Z"
-        stroke={props.color}
+        stroke={props.customColor}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -134,7 +134,7 @@ export const HomeIcon = (props: SvgIconProps) => (
   </SvgIcon>
 );
 
-export const ChartIcon = (props: SvgIconProps) => (
+export const ChartIcon = (props: SvgIconProps & { customColor: string }) => (
   <SvgIcon {...props}>
     <svg
       width="24"
@@ -145,14 +145,14 @@ export const ChartIcon = (props: SvgIconProps) => (
     >
       <path
         d="M21.2102 15.8901C20.574 17.3946 19.5789 18.7203 18.312 19.7514C17.0451 20.7825 15.5449 21.4875 13.9426 21.8049C12.3403 22.1222 10.6846 22.0423 9.12031 21.5719C7.55603 21.1016 6.13078 20.2552 4.96918 19.1068C3.80757 17.9583 2.94497 16.5429 2.45679 14.9841C1.96861 13.4253 1.86972 11.7706 2.16876 10.1647C2.46779 8.55889 3.15565 7.05074 4.1722 5.77214C5.18876 4.49354 6.50304 3.48343 8.00016 2.83011"
-        stroke={props.color}
+        stroke={props.customColor}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M22.0002 12.0001C22.0002 10.6869 21.7415 9.38654 21.239 8.17329C20.7364 6.96003 19.9998 5.85764 19.0713 4.92905C18.1427 4.00047 17.0403 3.26387 15.827 2.76133C14.6138 2.25878 13.3134 2.00012 12.0002 2.00012V12.0001H22.0002Z"
-        stroke={props.color}
+        stroke={props.customColor}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -161,7 +161,7 @@ export const ChartIcon = (props: SvgIconProps) => (
   </SvgIcon>
 );
 
-export const DocumentIcon = (props: SvgIconProps) => (
+export const DocumentIcon = (props: SvgIconProps & { customColor: string }) => (
   <SvgIcon {...props}>
     <svg
       width="18"
@@ -172,7 +172,7 @@ export const DocumentIcon = (props: SvgIconProps) => (
     >
       <path
         d="M11.0002 1.00012H3.00018C2.46975 1.00012 1.96104 1.21084 1.58597 1.58591C1.2109 1.96098 1.00018 2.46969 1.00018 3.00012V19.0001C1.00018 19.5306 1.2109 20.0393 1.58597 20.4143C1.96104 20.7894 2.46975 21.0001 3.00018 21.0001H15.0002C15.5306 21.0001 16.0393 20.7894 16.4144 20.4143C16.7895 20.0393 17.0002 19.5306 17.0002 19.0001V7.00012L11.0002 1.00012Z"
-        stroke={props.color}
+        stroke={props.customColor}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -181,7 +181,7 @@ export const DocumentIcon = (props: SvgIconProps) => (
   </SvgIcon>
 );
 
-export const FriendsIcon = (props: SvgIconProps) => (
+export const FriendsIcon = (props: SvgIconProps & { customColor: string }) => (
   <SvgIcon {...props}>
     <svg
       width="24"
@@ -193,28 +193,28 @@ export const FriendsIcon = (props: SvgIconProps) => (
       <g clipPath="url(#clip0_1_10178)">
         <path
           d="M23.0002 21.0001V19.0001C22.9995 18.1139 22.7045 17.2529 22.1615 16.5524C21.6186 15.852 20.8583 15.3517 20.0002 15.1301"
-          stroke={props.color}
+          stroke={props.customColor}
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M17.0002 21.0001V19.0001C17.0002 17.9393 16.5788 16.9218 15.8286 16.1717C15.0785 15.4216 14.061 15.0001 13.0002 15.0001H5.00018C3.93932 15.0001 2.9219 15.4216 2.17176 16.1717C1.42161 16.9218 1.00018 17.9393 1.00018 19.0001V21.0001"
-          stroke={props.color}
+          stroke={props.customColor}
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M16.0002 3.13013C16.8606 3.35043 17.6232 3.85083 18.1678 4.55244C18.7124 5.25405 19.008 6.11696 19.008 7.00513C19.008 7.8933 18.7124 8.75621 18.1678 9.45782C17.6232 10.1594 16.8606 10.6598 16.0002 10.8801"
-          stroke={props.color}
+          stroke={props.customColor}
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M9.00018 11.0001C11.2093 11.0001 13.0002 9.20926 13.0002 7.00012C13.0002 4.79098 11.2093 3.00012 9.00018 3.00012C6.79104 3.00012 5.00018 4.79098 5.00018 7.00012C5.00018 9.20926 6.79104 11.0001 9.00018 11.0001Z"
-          stroke={props.color}
+          stroke={props.customColor}
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -229,7 +229,7 @@ export const FriendsIcon = (props: SvgIconProps) => (
   </SvgIcon>
 );
 
-export const BoxIcon = (props: SvgIconProps) => (
+export const BoxIcon = (props: SvgIconProps & { customColor: string }) => (
   <SvgIcon {...props}>
     <svg
       width="24"
@@ -240,28 +240,28 @@ export const BoxIcon = (props: SvgIconProps) => (
     >
       <path
         d="M16.5002 9.40013L7.50018 4.21013"
-        stroke={props.color}
+        stroke={props.customColor}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M21.0002 16.0001V8.00012C20.9998 7.64939 20.9072 7.30493 20.7317 7.00128C20.5562 6.69763 20.3039 6.44548 20.0002 6.27012L13.0002 2.27012C12.6961 2.09458 12.3513 2.00217 12.0002 2.00217C11.6491 2.00217 11.3042 2.09458 11.0002 2.27012L4.00018 6.27012C3.69645 6.44548 3.44416 6.69763 3.26864 7.00128C3.09313 7.30493 3.00054 7.64939 3.00018 8.00012V16.0001C3.00054 16.3508 3.09313 16.6953 3.26864 16.999C3.44416 17.3026 3.69645 17.5548 4.00018 17.7301L11.0002 21.7301C11.3042 21.9057 11.6491 21.9981 12.0002 21.9981C12.3513 21.9981 12.6961 21.9057 13.0002 21.7301L20.0002 17.7301C20.3039 17.5548 20.5562 17.3026 20.7317 16.999C20.9072 16.6953 20.9998 16.3508 21.0002 16.0001Z"
-        stroke={props.color}
+        stroke={props.customColor}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M3.2702 6.96013L12.0002 12.0101L20.7302 6.96013"
-        stroke={props.color}
+        stroke={props.customColor}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M12.0002 22.0801V12.0001"
-        stroke={props.color}
+        stroke={props.customColor}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -270,7 +270,7 @@ export const BoxIcon = (props: SvgIconProps) => (
   </SvgIcon>
 );
 
-export const CameraIcon = (props: SvgIconProps) => (
+export const CameraIcon = (props: SvgIconProps & { customColor: string }) => (
   <SvgIcon {...props}>
     <svg
       width="20"
@@ -281,7 +281,7 @@ export const CameraIcon = (props: SvgIconProps) => (
     >
       <path
         d="M17 3.49999H15.72L15.4 2.49999C15.1926 1.91322 14.8077 1.40549 14.2989 1.04715C13.7901 0.68881 13.1824 0.497593 12.56 0.499992H7.44C6.81155 0.501167 6.19933 0.699675 5.68977 1.0675C5.1802 1.43532 4.79901 1.95388 4.6 2.54999L4.28 3.54999H3C2.20435 3.54999 1.44129 3.86606 0.87868 4.42867C0.316071 4.99128 0 5.75434 0 6.54999V14.55C0 15.3456 0.316071 16.1087 0.87868 16.6713C1.44129 17.2339 2.20435 17.55 3 17.55H17C17.7956 17.55 18.5587 17.2339 19.1213 16.6713C19.6839 16.1087 20 15.3456 20 14.55V6.54999C20.0066 6.15184 19.9339 5.75635 19.7862 5.38658C19.6384 5.01681 19.4184 4.68017 19.1392 4.39628C18.86 4.11238 18.527 3.88692 18.1597 3.73304C17.7924 3.57916 17.3982 3.49994 17 3.49999ZM18 14.5C18 14.7652 17.8946 15.0196 17.7071 15.2071C17.5196 15.3946 17.2652 15.5 17 15.5H3C2.73478 15.5 2.48043 15.3946 2.29289 15.2071C2.10536 15.0196 2 14.7652 2 14.5V6.49999C2 6.23478 2.10536 5.98042 2.29289 5.79289C2.48043 5.60535 2.73478 5.49999 3 5.49999H5C5.21807 5.51137 5.43386 5.45107 5.61443 5.32828C5.795 5.20549 5.93042 5.02697 6 4.81999L6.54 3.17999C6.60709 2.98137 6.7349 2.80886 6.90537 2.68683C7.07584 2.56481 7.28036 2.49945 7.49 2.49999H12.61C12.8196 2.49945 13.0242 2.56481 13.1946 2.68683C13.3651 2.80886 13.4929 2.98137 13.56 3.17999L14.1 4.81999C14.1642 5.01074 14.2844 5.17768 14.445 5.299C14.6055 5.42032 14.799 5.49037 15 5.49999H17C17.2652 5.49999 17.5196 5.60535 17.7071 5.79289C17.8946 5.98042 18 6.23478 18 6.49999V14.5ZM10 5.49999C9.20887 5.49999 8.43552 5.73459 7.77772 6.17411C7.11992 6.61364 6.60723 7.23835 6.30448 7.96926C6.00173 8.70016 5.92252 9.50443 6.07686 10.2804C6.2312 11.0563 6.61216 11.769 7.17157 12.3284C7.73098 12.8878 8.44372 13.2688 9.21964 13.4231C9.99556 13.5775 10.7998 13.4983 11.5307 13.1955C12.2616 12.8928 12.8864 12.3801 13.3259 11.7223C13.7654 11.0645 14 10.2911 14 9.49999C14 8.43913 13.5786 7.42171 12.8284 6.67156C12.0783 5.92142 11.0609 5.49999 10 5.49999ZM10 11.5C9.60444 11.5 9.21776 11.3827 8.88886 11.1629C8.55996 10.9432 8.30362 10.6308 8.15224 10.2654C8.00087 9.89991 7.96126 9.49777 8.03843 9.10981C8.1156 8.72185 8.30608 8.36548 8.58579 8.08578C8.86549 7.80607 9.22186 7.61559 9.60982 7.53842C9.99778 7.46125 10.3999 7.50086 10.7654 7.65223C11.1308 7.80361 11.4432 8.05995 11.6629 8.38885C11.8827 8.71775 12 9.10443 12 9.49999C12 10.0304 11.7893 10.5391 11.4142 10.9142C11.0391 11.2893 10.5304 11.5 10 11.5Z"
-        fill={props.color}
+        fill={props.customColor}
       />
     </svg>
   </SvgIcon>
@@ -289,11 +289,7 @@ export const CameraIcon = (props: SvgIconProps) => (
 
 export const ForwardIcon = (props: SvgIconProps) => (
   <SvgIcon {...props}>
-    <svg
-      viewBox="0 0 6 10"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M1 9L4.29293 5.70707C4.68182 5.31818 4.68182 4.68182 4.29293 4.29293L1 1"
         stroke="#459AFF"

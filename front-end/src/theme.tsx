@@ -57,11 +57,14 @@ export const theme = createTheme({
       fontSize: "16px",
       fontWeight: "500",
       lineHeight: "24px",
+      color: "#151D48",
     },
     body2: {
       fontSize: "12px",
       fontWeight: "400",
       lineHeight: "20px",
+      marginBottom: "8px",
+      color: "#737791",
     },
     button: {
       fontSize: "14px",

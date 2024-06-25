@@ -1,13 +1,13 @@
 import { Card, Box, IconButton, Typography, Divider, List, SxProps, ListItem, ListItemText, Theme } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 import { CameraIcon } from "../Icons";
-import userImage from "../assets/person.jpeg";
+import userImage from "../../assets/person.jpeg";
 
 export const UserCard = () => {
   const loc = useLocation();
   const path = loc.pathname;
   return (
-    <Card component="article">
+    <Card component="article" className="h-min">
       <Box component="header" className="p-6">
         <Box className="relative rounded-[calc(39px)] w-[calc(120px)] h-[calc(120px)] overflow-hidden">
           <Box

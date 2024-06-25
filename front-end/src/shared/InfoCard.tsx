@@ -1,20 +1,22 @@
-import { Box, Button, Card, Typography } from "@mui/material";
+import { Box, Button, Card, SxProps, Typography } from "@mui/material";
 import { ReactNode } from "react";
 
 export default function InfoCard({
   children,
   title,
   action,
+  sx,
 }: Readonly<{
   children: ReactNode[] | ReactNode;
   title: string;
   action: () => void;
+  sx?: SxProps;
 }>) {
   return (
-    <Card component="article" datatype="main">
+    <Card component="article" datatype="main" sx={sx}>
       <Box
         component="header"
-        className="flex flex-row justify-between items-center mb-24"
+        className="flex flex-row justify-between items-center mb-6"
       >
         <Typography variant="h3"> {title} </Typography>
         <Button

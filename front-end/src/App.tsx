@@ -1,6 +1,7 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import PersonalInfo from "./pages/PersonalInfo.page";
 import Layout from "./shared/Layout";
+import FinInfo from "./pages/FinInfo.page";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <PersonalInfo />,
+      },
+      {
+        path: "/financial",
+        element: <FinInfo />,
       },
     ],
   },

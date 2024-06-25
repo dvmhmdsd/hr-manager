@@ -22,6 +22,7 @@ export const theme = createTheme({
     },
   },
   typography: {
+    fontFamily: "Poppins",
     h1: {
       fontSize: "26px",
       fontWeight: "600",
@@ -67,6 +68,12 @@ export const theme = createTheme({
       fontWeight: "600",
       lineHeight: "20px",
     },
+    caption: {
+      fontSize: "12px",
+      lineHeight: "18px",
+      fontWeight: "400",
+      color: "#959FB0",
+    },
   },
   components: {
     MuiCard: {
@@ -84,7 +91,17 @@ export const theme = createTheme({
           style: {
             boxShadow: "unset",
             padding: "8px 12px",
-            textTransform: 'capitalize'
+            textTransform: "capitalize",
+          },
+        },
+      ],
+    },
+    MuiIconButton: {
+      variants: [
+        {
+          props: {},
+          style: {
+            padding: "8px 12px",
           },
         },
       ],

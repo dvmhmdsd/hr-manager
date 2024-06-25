@@ -85,7 +85,9 @@ export default function Sidebar() {
         <Box component="img" src={Logo} />
       </Box>
 
-      <List>
+      <List sx={{
+        p: '0'
+      }}>
         {barItems.map((item, index) => {
           const isActive = activeItem === index;
           const itemIcon = getBarItem(index, isActive ? "#fff" : "#737791");

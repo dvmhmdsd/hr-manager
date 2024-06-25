@@ -4,7 +4,6 @@ import App from "./App.tsx";
 import "./index.css";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "./theme.tsx";
-import Layout from "./shared/Layout.tsx";
 
 const buildProvidersTree = (
   componentsWithProps: [JSX.ElementType, object][]
@@ -32,7 +31,6 @@ const buildProvidersTree = (
 const ProvidersTree = buildProvidersTree([
   [React.StrictMode, {}],
   [ThemeProvider, { theme }],
-  [Layout, {}],
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

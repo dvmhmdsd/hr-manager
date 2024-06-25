@@ -1,10 +1,21 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import PersonalInfo from "./pages/PersonalInfo.page";
+import Layout from "./shared/Layout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <PersonalInfo />,
+    element: (
+      <Layout>
+        <Outlet />
+      </Layout>
+    ),
+    children: [
+      {
+        path: "/",
+        element: <PersonalInfo />,
+      },
+    ],
   },
 ]);
 

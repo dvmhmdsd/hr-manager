@@ -16,4 +16,5 @@ export interface IFormInputs {
   nationalities: number[];
   maritalStatus: number;
   dependants: number;
+  additionalNationalities?: string;
 }

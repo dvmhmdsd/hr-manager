@@ -26,7 +26,7 @@ export const HeaderIcons = () => {
         ),
       },
       {
-        key: 1,
+        key: 2,
         component: (
           <IconButton>
             <MailIcon />
@@ -34,7 +34,7 @@ export const HeaderIcons = () => {
         ),
       },
       {
-        key: 1,
+        key: 3,
         component: (
           <IconButton>
             <SettingsIcon />
@@ -42,7 +42,7 @@ export const HeaderIcons = () => {
         ),
       },
       {
-        key: 1,
+        key: 4,
         component: <Box component="img" src={personImg} className="w-10 h-10 hover:cursor-pointer" />,
       },
     ];

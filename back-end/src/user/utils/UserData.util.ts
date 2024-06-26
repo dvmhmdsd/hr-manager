@@ -1,18 +1,7 @@
 import { NotFoundException } from '@nestjs/common';
-import { Country, User } from 'src/graphql';
+import { MaritalStatus, Nationality, User } from 'src/graphql';
 
 export class UserUtils {
-  private countries: Country[] = [
-    { id: 1, name: 'Egypt' },
-    { id: 1016, name: 'Bolivia' },
-    { id: 1117, name: 'Latvia' },
-    { id: 1225, name: 'Virgin Islands, U.S.' },
-  ];
-  private maritalStatuses = [
-    { id: 25, name: 'Single' },
-    { id: 26, name: 'Married' },
-    { id: 27, name: 'Divorced' },
-  ];
   users: User[] = [
     {
       id: 1234,
@@ -43,13 +32,23 @@ export class UserUtils {
     },
   ];
 
-  getCountryById(countryId: number) {
-    return this.countries.find((country) => country.id === countryId);
+  getCountryByName(countryName: string): Nationality {
+    const randomId = Math.floor(Math.random() * 100);
+    return {
+      country: {
+        id: randomId,
+        name: countryName,
+      },
+      countryId: randomId,
+    };
   }
 
-  getMaritalStatusById(maritalStatusId: number) {
-    return this.maritalStatuses.find((status) => status.id === maritalStatusId)
-      ?.name;
+  getMaritalStatus(maritalStatus: string): MaritalStatus {
+    const randomId = Math.floor(Math.random() * 100);
+    return {
+      id: randomId,
+      name: maritalStatus,
+    };
   }
 
   searchForUser(id: number): [User, number] {

@@ -20,7 +20,16 @@ export const FormField = ({
       defaultValue={value}
       control={control}
       rules={{ required: true }}
-      render={({ field }) => <TextField {...field} />}
+      render={({ field }) => (
+        <TextField
+          {...field}
+          helperText={
+            name === "additionalNationalities"
+              ? "Add all nationalities with , separated. e.g Egypt, USA, ...etc"
+              : ""
+          }
+        />
+      )}
     />
   </Box>
 );

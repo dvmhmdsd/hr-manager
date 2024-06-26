@@ -35,16 +35,14 @@ export class UserService {
     return {
       ...this.userUtils.users[userIndex],
       ...updateUserInput,
-      nationalities: updateUserInput.nationalities?.map((nationalityInput) => ({
-        country: this.userUtils.getCountryById(nationalityInput),
-        countryId: nationalityInput,
-      })),
-      maritalStatus: {
-        id: updateUserInput.maritalStatus,
-        name: this.userUtils.getMaritalStatusById(
-          updateUserInput.maritalStatus,
+      nationalities: updateUserInput.nationalities
+        .split(',')
+        ?.map((nationalityInput) =>
+          this.userUtils.getCountryByName(nationalityInput),
         ),
-      },
+      maritalStatus: this.userUtils.getMaritalStatus(
+        updateUserInput.maritalStatus,
+      ),
     };
   }
 }

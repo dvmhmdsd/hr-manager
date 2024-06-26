@@ -1,12 +1,19 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, CircularProgress, Typography } from "@mui/material";
 import InfoCard from "../shared/InfoCard";
 import { FileIcon } from "../shared/Icons";
 import { useInfo } from "../hooks/useInfo";
 import { useNavigate } from "react-router-dom";
 
 export default function PersonalInfo() {
-  const { userInfo } = useInfo();
+  const { userInfo, loading } = useInfo();
   const navigate = useNavigate();
+
+  if (loading)
+    return (
+      <Box className="flex w-full justify-center">
+        <CircularProgress />
+      </Box>
+    );
 
   return (
     <>
@@ -36,7 +43,12 @@ export default function PersonalInfo() {
                     <Typography variant="body1">{value}</Typography>
                   </Button>
                 ) : (
-                  <Typography variant="body1">{value}</Typography>
+                  <Typography
+                    variant="body1"
+                    className="text-nowrap whitespace-nowrap text-ellipsis overflow-hidden"
+                  >
+                    {value}
+                  </Typography>
                 )}
               </Box>
             ))}

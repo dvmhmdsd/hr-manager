@@ -1,83 +1,141 @@
+import { useApi } from "./useApi";
+
 export function useInfo() {
+  const { data, loading, error } = useApi();
   const userInfo = {
     "Basic Information": [
       {
+        key: 1,
         label: "National ID Number",
         type: "",
-        value: "29702031400693",
+        value: data?.user.nationalId.idNumber,
         name: "nationalId.idNumber",
       },
       {
+        key: 2,
         label: "National ID Expiring Date",
         type: "",
-        value: "01/ 04 / 2025",
+        value:
+          data &&
+          new Date(data?.user.nationalId.expiryDate).toLocaleDateString(),
         name: "nationalId.expiryDate",
       },
-      { label: "Title", type: "", value: "Mr.", name: null },
-      { label: "", type: "", value: "", name: null },
-      { label: "First Name", type: "", value: "John", name: "firstName" },
-      { label: "Father Name", type: "", value: "John", name: "fatherName" },
+      { key: 3, label: "Title", type: "", value: "Mr.", name: null },
+      { key: 4, label: "", type: "", value: "", name: null },
       {
+        key: 5,
+        label: "First Name",
+        type: "",
+        value: data?.user.firstName,
+        name: "firstName",
+      },
+      {
+        key: 6,
+        label: "Father Name",
+        type: "",
+        value: data?.user.fatherName,
+        name: "fatherName",
+      },
+      {
+        key: 7,
         label: "Grand Father Name",
         type: "",
-        value: "John",
+        value: data?.user.grandfatherName,
         name: "grandfatherName",
       },
-      { label: "Family Name", type: "", value: "Smith", name: "familyName" },
       {
+        key: 8,
+        label: "Family Name",
+        type: "",
+        value: data?.user.familyName,
+        name: "familyName",
+      },
+      {
+        key: 9,
         label: "الإسم الأول",
         type: "",
-        value: "جون",
+        value: data?.user.localizedName.firstName,
         name: "localizedName.firstName",
       },
       {
+        key: 10,
         label: "اسم الأب",
         type: "",
-        value: "جون",
+        value: data?.user.localizedName.fatherName,
         name: "localizedName.fatherName",
       },
       {
+        key: 11,
         label: "اسم الجد",
         type: "",
-        value: "جون",
+        value: data?.user.localizedName.grandfatherName,
         name: "localizedName.grandfatherName",
       },
       {
+        key: 12,
         label: "اللقب / اسم العائلة",
         type: "",
-        value: "سميث",
+        value: data?.user.localizedName.familyName,
         name: "localizedName.familyName",
       },
-      { label: "Date of birth", type: "", value: "01 / 04 / 1980", name: null },
-      { label: "Gender", type: "", value: "Male", name: null },
       {
+        key: 13,
+        label: "Date of birth",
+        type: "",
+        value: "01 / 04 / 1980",
+        name: null,
+      },
+      { key: 14, label: "Gender", type: "", value: "Male", name: null },
+      {
+        key: 15,
         label: "Nationality",
         type: "",
-        value: "Egyptian",
+        value: getMainNationality(data?.user.nationalities),
         name: "nationalities",
       },
-      { label: "Additional Nationality", type: "", value: "-", name: null },
-      { label: "Passport No.", type: "", value: "A135464", name: null },
       {
+        key: 16,
+        label: "Additional Nationality",
+        type: "",
+        value: getAdditionalNationalities(data?.user.nationalities),
+        name: "additionalNationalities",
+      },
+      {
+        key: 17,
+        label: "Passport No.",
+        type: "",
+        value: "A135464",
+        name: null,
+      },
+      {
+        key: 18,
         label: "Passport Issue Date",
         type: "",
         value: "01 / 04 / 1980",
         name: null,
       },
       {
+        key: 19,
         label: "Passport Expiry Date",
         type: "",
         value: "01 / 04 / 1980",
         name: null,
       },
-      { label: "", type: "", value: "", name: null, },
+      { key: 20, label: "", type: "", value: "", name: null },
       {
+        key: 21,
         label: "Marital Status",
         type: "",
-        value: "Single",
+        value: data?.user?.maritalStatus.name,
         name: "maritalStatus",
       },
-      { label: "Dependencies", type: "", value: "0", name: "dependants" },
+      {
+        key: 22,
+        label: "Dependencies",
+        type: "",
+        value: data?.user.dependants,
+        name: "dependants",
+      },
     ],
     "Contact Information": [
       { label: "Personal Email", type: "", value: "Personal Email" },
@@ -119,5 +177,20 @@ export function useInfo() {
     { label: "IBAN", value: "12346546413216446" },
   ];
 
-  return { userInfo, bankInfo };
+  return { userInfo, bankInfo, loading, error };
+}
+
+function getMainNationality(
+  nationalities: { country: { id: number; name: string } }[]
+) {
+  return nationalities?.[0].country.name;
+}
+
+function getAdditionalNationalities(
+  nationalities: { country: { id: number; name: string } }[]
+) {
+  return nationalities
+    ?.slice(1)
+    .map((n) => n.country.name)
+    .join(", ");
 }

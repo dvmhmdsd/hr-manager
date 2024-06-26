@@ -107,13 +107,13 @@ const UserRoutesListItem = ({
           cursor: "pointer",
           backgroundColor: (theme: Theme) =>
             path === route ? "" : theme.status.active.backgroundColor,
+        },
+        "& .MuiTypography-root": {
           color: (theme: Theme) =>
-            path === route ? "" : theme.status.active.color,
+            path === route ? theme.status.active.color : "",
         },
         backgroundColor: (theme: Theme) =>
           path === route ? theme.status.active.backgroundColor : "",
-        color: (theme: Theme) =>
-          path === route ? theme.status.active.color : "",
         fontWeight: path === route ? "500" : "400",
         borderRadius: "16px",
         ...sx,

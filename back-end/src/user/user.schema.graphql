@@ -61,8 +61,8 @@ input UpdateUserInput {
   familyName: String!
   localizedName: LocalizedNameInput
   nationalId: NationalIdInput
-  nationalities: [Int!]
-  maritalStatus: Int!
+  nationalities: String!
+  maritalStatus: String!
   dependants: Int!
 }
 

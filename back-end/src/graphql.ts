@@ -27,8 +27,8 @@ export class UpdateUserInput {
     familyName: string;
     localizedName?: Nullable<LocalizedNameInput>;
     nationalId?: Nullable<NationalIdInput>;
-    nationalities?: Nullable<number[]>;
-    maritalStatus: number;
+    nationalities: string;
+    maritalStatus: string;
     dependants: number;
 }
 
